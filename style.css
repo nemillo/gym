@@ -1,0 +1,22 @@
+
+BODY, P, LI    {font-family: verdana, arial, sans-serif;
+font-size: 12pt; color: #000000; text-align: left;
+margin-left:10px}
+H1      {font-family: verdana, arial, sans-serif;
+font-size: 14pt; color: #FFFFFF}
+A:link, A:visited  {font-family: verdana, arial, sans-serif;
+font-size: 12pt; color: #822222; text-decoration:none}
+.sidebar  {font-family: verdana, arial, sans-serif;
+font-size: 12pt; color: #822222; text-align:right;
+margin-top:10; margin-right:7}
+.topic    {font-family: verdana, arial, sans-serif;
+font-size: 12pt; font-weight: bold; color: #000000;
+background: #FFFECC; text-align: left}
+.footer  {font-family: verdana, arial, sans-serif;
+font-size: 9pt; color: #808080; text-align:right}
+.previous  {font-family: verdana, arial, sans-serif;
+font-size: 12pt; color: #808080; text-align:left;
+margin-left:25; margin-right:100}
+.next  {font-family: verdana, arial, sans-serif;
+font-size: 12pt; color: #808080; text-align:right;
+margin-left:100; margin-right:25}
