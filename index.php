@@ -531,7 +531,7 @@ $header_msg = "Anotaciones del día $entry_date";?>
 <html>
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Minimalist Zen Blog: <?php echo $_GET['date']; ?></title>
+	<title>Minimalist Zen Blog: <?php echo $title_msg; ?></title>
 
 <link href="style2.css" rel="stylesheet" type="text/css" title="Zen Blog" />
 </head>
