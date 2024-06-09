@@ -1,4 +1,24 @@
-﻿<?php
+﻿
+<?php
+  session_start();
+  $user = null;
+  // Open database connection
+  $hostname = "sql112.epizy.com";
+  $user = "epiz_28718908";
+  $password = "weqmXe12345";
+
+  $conn = mysqli_connect($hostname, $user, $password,"epiz_28718908_diario");
+  $conn -> set_charset("utf8");
+  
+  if (isset($_SESSION['usuario'])) {
+    $user_name = $_SESSION['usuario'];
+    
+
+    
+  } else {
+    header('Location: /gym/login.php');
+  }
+
 
 //CALENDARIO WEB 
 
@@ -428,17 +448,7 @@ class Calendar
 
 $PHP_SELF = $_SERVER['PHP_SELF'];
 
- // Open database connection
- $hostname = "sql112.epizy.com";
- $user = "epiz_28718908";
- $password = "weqmXe12345";
-
-$conn = mysqli_connect($hostname, $user, $password,"epiz_28718908_diario");
-$conn -> set_charset("utf8");
-//mysql_select_db("nemilloc_diario");
-//mysql_set_charset('utf8', $db);
-//mysql_query("SET character_set_results = 'utf8', character_set_client = 'utf8', character_set_connection = 'utf8', character_set_database = 'utf8', character_set_server = 'utf8'");
-
+ 
 // Identify the latest entry
 $query = "SELECT MAX(ID) FROM gym";
 $result = $conn->query($query);
@@ -525,7 +535,7 @@ elseif($next_date == "" && $prev_date != "") {
 // NOW ASSEMBLE THE PAGE
 // ---------------------
 $title_msg = $entry_date;
-$header_msg = "Anotaciones del día $entry_date";?>
+$header_msg = "Anotaciones del día $entry_date para $user_name";?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
@@ -545,7 +555,7 @@ $header_msg = "Anotaciones del día $entry_date";?>
 </div>
 
 <div id="subheader">
-	<h1><?php echo $header_msg; ?></h1>
+	<h1><?php echo $header_msg; ?></h1><a href="logout.php">  Logout</a>
 </div>
 
 <div id="lateral">

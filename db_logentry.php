@@ -1,4 +1,7 @@
 <?php
+session_start();
+$user = null;
+// Open database connection
 $hostname = "sql112.epizy.com";
 $user = "epiz_28718908";
 $password = "weqmXe12345";
@@ -6,8 +9,13 @@ $password = "weqmXe12345";
 $conn = mysqli_connect($hostname, $user, $password,"epiz_28718908_diario");
 $conn -> set_charset("utf8");
 
-//mysql_connect($hostname, $user, $password);
-//mysql_select_db("nemilloc_diario");
+if (isset($_SESSION['usuario'])) {
+  $user_name = $_SESSION['usuario'];
+   
+} else {
+  header('Location: /gym/login.php');
+}
+
 $post = isset($_POST['Submit']) ? $_POST['Submit'] : NULL;
 
 if ($post == 'Enter') {
